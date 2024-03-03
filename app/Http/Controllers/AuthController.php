@@ -20,7 +20,7 @@ class AuthController extends Controller
         if(Auth::guard('user')->attempt(['email'=>$request->email, 'password'=>$request->password])){
             return redirect()->intended('/admin');
         }else{
-            return redirect(route('auth.index'))->with('pesan','kombinasi email dan password salah');
+            return redirect(route('auth.index'))->with('pesan','Kombinasi email dan password salah')->withErrors(['email' => 'Kombinasi email dan password tidak cocok']);
         }
     }
 
