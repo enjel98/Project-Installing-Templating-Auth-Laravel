@@ -6,6 +6,7 @@
             </div>
             <div class="col-lg-6 text-right">
                 <a href="<?php echo e(route('kategori.tambah')); ?>" class="btn btn-sm btn-primary"><i class="fa fa-plus"></i>Tambah</a>
+                <a href="<?php echo e(route('kategori.exportPdf')); ?>" class="btn btn-sm btn-primary"><i class="fa fa-file-pdf"></i>Export PDF</a>
             </div>
         </div>
         <?php if(session()->has('pesan')): ?>

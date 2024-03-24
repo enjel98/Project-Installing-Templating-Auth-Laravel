@@ -19,39 +19,37 @@
                 <div class="table-responsive">
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                         <thead>
-                            <tr>
-                                <th>No</th>
-                                <th>Gambar Berita</th>
-                                <th>Judul Berita</th>
-                                <th>Kategori</th>
-                                <th>Aksi</th>
-                            </tr>
+                        <tr>
+                            <th>No</th>
+                            <th>Gambar Berita</th>
+                            <th>Judul Berita</th>
+                            <th>Kategori</th>
+                            <th>Aksi</th>
+                        </tr>
                         </thead>
                         <tbody>
-                            @php
-                                $no = 1;
-                            @endphp
-                            @foreach ($berita as $row)
-                                <tr>
-                                    <td>{{ $no++ }}</td>
-                                    <td><img src="{{route('storage',$row->gambar_berita)}}" width="50px" height="50px"> </td>
-                                    <td>{{$row->judul_berita}}</td>
-                                    <td>{{$row->kategori->nama_kategori}}</td>
-                                    <td>
-                                        <a href="{{ route('berita.ubah', $row->id_berita) }}"
-                                            class="btn btn-sm btn-secondary"><i class="fa fa-edit"></i>Ubah</a>
-                                        <a href="{{ route('berita.hapus', $row->id_berita) }}"
-                                            onclick="return confirm('Anda Yakin Menghapusnya?')"
-                                            class="btn btn-sm btn-secondary"><i class="fa fa-trash"></i>Hapus</a>
-
-                                    </td>
-                                </tr>
-                            @endforeach
+                        @php
+                            $no = 1;
+                        @endphp
+                        @foreach ($berita as $row)
+                            <tr>
+                                <td>{{ $no++ }}</td>
+                                <td><img src="{{route('storage',$row->gambar_berita)}}" width="50px" height="50px"></td>
+                                <td>{{$row->judul_berita}}</td>
+                                <td>{{$row->kategori->nama_kategori}}</td>
+                                <td>
+                                    <a href="{{ route('berita.ubah', $row->id_berita) }}"
+                                       class="btn btn-sm btn-secondary"><i class="fa fa-edit"></i>Ubah</a>
+                                    <a href="{{ route('berita.hapus', $row->id_berita) }}"
+                                       onclick="return confirm('Anda Yakin Menghapusnya?')"
+                                       class="btn btn-sm btn-secondary"><i class="fa fa-trash"></i>Hapus</a>
+                                </td>
+                            </tr>
+                        @endforeach
                         </tbody>
                     </table>
                 </div>
             </div>
-
         </div>
     </div>
 @endsection

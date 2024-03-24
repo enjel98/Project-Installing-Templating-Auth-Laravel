@@ -10,7 +10,7 @@
                         <label class="form-label">Judul Berita</label>
                         <input type="text" name="judul_berita" value="{{old('judul_berita')}}" class="form-control @error('judul_berita') is-invalid @enderror">
                         @error('judul_berita')
-                        <span style="...">{{$message}}</span>
+                        <span style="color: red;">{{$message}}</span>
                         @enderror
                     </div>
 
@@ -22,7 +22,7 @@
                             @endforeach
                         </select>
                         @error('id_kategori')
-                        <span style="...">{{$message}}</span>
+                        <span style="color: red;">{{$message}}</span>
                         @enderror
                     </div>
 
@@ -31,7 +31,7 @@
                         <input type="file" name="gambar_berita" class="form-control @error('gambar_berita') is-invalid @enderror"
                         accept="image/*" onchange="previewImage(event)">
                         @error('judul_berita')
-                        <span style="...">{{$message}}</span>
+                        <span style="color: red;">{{$message}}</span>
                         @enderror
                         <p></p>
                         <img id="preview" onerror="this.onerror=null;this.src='http://127.0.0.1:8000images/depositphotos_318221368-stock-illustration-missing-picture-page-for-website.jpg';" alt="" width="15%">
@@ -42,7 +42,7 @@
                         <label class="form-label">Isi Berita</label>
                         <textarea id="editor" name="isi_berita" class="form-control @error('isi_berita') is-invalid @enderror">{{old('isi_berita')}}</textarea>
                         @error('isi_berita')
-                        <span style="...">{{$message}}</span>
+                        <span style="color: red;">{{$message}}</span>
                         @enderror
                     </div>
 

@@ -10,7 +10,7 @@ class Berita extends Model
 
     protected $primaryKey = 'id_berita';
 
-    protected $fillable = ['judul_berita','isi_berita','gambar_berita','id_kategori'];
+    protected $fillable = ['judul_berita','isi_berita','gambar_berita','id_kategori','total_view'];
 
     public function kategori(){
         return $this->belongsTo(kategori::class,'id_kategori');
